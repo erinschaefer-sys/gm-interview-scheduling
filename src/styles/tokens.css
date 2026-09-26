@@ -1,0 +1,33 @@
+/*
+ * LOCAL STAND-IN for @ema/design-system semantic tokens. This file is the
+ * only place raw colors live. GM blue (#005DAA) is mapped into the brand
+ * token here; components use token classes (bg-brand-primary, etc.) only.
+ * The default Tailwind palette is removed so palette classes can't be used.
+ */
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --color-brand-primary: #005DAA;
+  --color-brand-primary-hover: #004A88;
+  --color-brand-primary-foreground: #FFFFFF;
+  --color-brand-subtle: #EAF2FA;
+
+  --color-app-background: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-foreground: #1B1F23;
+  --color-muted-bg: #F3F5F7;
+  --color-muted-border: #CDD3DA;
+  --color-muted-foreground: #56606B;
+  --color-skeleton: #E6E9ED;
+
+  --color-danger-foreground: #A4261D;
+  --color-danger-bg: #FCEDEB;
+  --color-danger-border: #E7B5AF;
+  --color-success-foreground: #1D6B3A;
+  --color-focus-ring: #005DAA;
+
+  --font-sans: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}

@@ -1,0 +1,34 @@
+# DRAFT — not validated. The real schema lives in the Ema template's
+# .claude/rules/catalog-schema.md. Regenerate this file against that schema
+# when the code moves into the template; the intent below is what matters.
+app:
+  name: GM Interview Scheduling
+  description: Candidate-facing page to pick one interview time per panel member.
+
+slots:
+  - name: CASE_LOOKUP_AIE
+    kind: aie
+    required: true
+    description: Given case_id + token, returns the case, the panel and each panel member's open slots.
+  - name: BOOKING_AIE
+    kind: aie
+    required: true
+    description: Given case_id + token + one slot per panel member, re-checks and books all interviews.
+  - name: CASE_SOURCE
+    kind: string
+    required: false
+    value: slots   # never "fixture" in a published build (guard enforces)
+
+routes:
+  - path: /schedule
+    method: GET
+    auth: public
+  - path: /api/public/case
+    method: GET
+    auth: public
+    rate_limit: 60/minute
+  - path: /api/public/selection
+    method: POST
+    auth: public
+    rate_limit: 60/minute
+    audit: interview_selection.submit
