@@ -45,7 +45,7 @@ for (const file of code) {
 }
 
 // Fixture mode must never be on in production config.
-for (const f of ['.env.production', '.env.production.local', 'catalog.yaml']) {
+for (const f of ['.env.production', '.env.production.local', 'catalog.yaml', 'docs/catalog-intent.yaml']) {
   const p = join(root, f);
   if (existsSync(p) && /CASE_SOURCE\s*[:=]\s*["']?fixture/i.test(readFileSync(p, 'utf8'))) {
     fail(p, 0, 'CASE_SOURCE=fixture in production config');

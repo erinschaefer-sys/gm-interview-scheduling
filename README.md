@@ -43,7 +43,7 @@ server/     Hono API: /api/public/case, /api/public/selection, rate limit, idemp
   platform/ LOCAL STAND-INS for the template's EmuClient and recordAudit
 src/        React page; components/ds/ are LOCAL STAND-INS for @ema/design-system
 public/brand/gm-logo.svg   the logo (replace this one file to swap assets)
-catalog.yaml               DRAFT; regenerate against the template's catalog-schema.md
+docs/catalog-intent.yaml   slots, routes and roles this app needs (not a real catalog.yaml)
 scripts/guard.mjs          local guard: outside URLs, raw colors, fixture-in-production
 ```
 
@@ -54,5 +54,5 @@ scripts/guard.mjs          local guard: outside URLs, raw colors, fixture-in-pro
 3. Replace `server/platform/emu-client.ts` with the template's EmuClient and `server/platform/audit.ts` with its `recordAudit()`.
 4. Swap `src/components/ds/*` for `@ema/design-system` components (check each via `frontier_app_get_component_docs`); map tokens from `src/styles/tokens.css` to DS tokens, with GM blue `#005DAA` as the brand token.
 5. Back `ConfirmationStore` with a model (template's `db-model.md`).
-6. Declare the three public routes and both AIE slots in `catalog.yaml` per `catalog-schema.md`; bind `CASE_LOOKUP_AIE` and `BOOKING_AIE`.
+6. Write `catalog.yaml` from the template's format using `docs/catalog-intent.yaml` (both AIE slots, public routes); bind `CASE_LOOKUP_AIE` and `BOOKING_AIE`.
 7. Run the template's typecheck, lint, test, guard, build.
