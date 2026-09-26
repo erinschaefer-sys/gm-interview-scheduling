@@ -43,7 +43,8 @@ server/     Hono API: /api/public/case, /api/public/selection, rate limit, idemp
   platform/ LOCAL STAND-INS for the template's EmuClient and recordAudit
 src/        React page; components/ds/ are LOCAL STAND-INS for @ema/design-system
 public/brand/gm-logo.svg   the logo (replace this one file to swap assets)
-docs/catalog-intent.yaml   slots, routes and roles this app needs (not a real catalog.yaml)
+catalog.yaml               AIE slot schema, in the builder's format
+docs/catalog-intent.yaml   everything else the app needs (public routes, rate limits, roles)
 scripts/guard.mjs          local guard: outside URLs, raw colors, fixture-in-production
 ```
 

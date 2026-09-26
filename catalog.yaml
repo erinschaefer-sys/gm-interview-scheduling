@@ -1,0 +1,12 @@
+# Slot schema for the Ema Frontier App Builder. Format copied from a
+# builder-generated catalog.yaml (Configuration tab export). Values and
+# workflow IDs are bound per environment in the builder, never here.
+
+apps:
+    - slug: gm-interview-scheduling
+      name: GM Interview Scheduling
+      required_aie_slots:
+        - slot_name: CASE_LOOKUP_AIE
+          description: Given case_id and token, returns the candidate, role, timezone, status and each panel member's open 45-minute slots (or not found). Called by GET /api/public/case.
+        - slot_name: BOOKING_AIE
+          description: Given case_id, token and one slot per panel member, re-checks availability and creates the calendar invitations, or returns slot_unavailable. Called by POST /api/public/selection.

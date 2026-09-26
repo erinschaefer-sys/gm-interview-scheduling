@@ -1,6 +1,7 @@
-# NOT a catalog.yaml. Ema's importer rejected a guessed catalog.yaml, so this
-# records the intent only. Write the real catalog.yaml from the template's
-# .claude/rules/catalog-schema.md (or a template app's catalog.yaml).
+# NOT a catalog.yaml: notes on everything this app needs from the platform.
+# The real catalog.yaml (root) carries only what its format is known to
+# support today: the two AIE slots. Public routes, rate limits and roles
+# below still need a home once the template's catalog-schema.md is known.
 app:
   name: GM Interview Scheduling
   description: Candidate-facing page to pick one interview time per panel member.
